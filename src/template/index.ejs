@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <%= htmlWebpackPlugin.files.css.map(href => `
+        <link rel="stylesheet" type="text/css" href="${href}" />
+        `).join("") %>
+        <style>
+            html,
+            body {
+                height: 100%;
+            }
+            body {
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <%= htmlWebpackPlugin.options.development %>
+        <div id="app"></div>
+        <%= htmlWebpackPlugin.options.dll %> <%= htmlWebpackPlugin.files.js.map(url => `
+        <script type="text/javascript" src="${url}"></script>
+        `).join("") %>
+    </body>
+</html>

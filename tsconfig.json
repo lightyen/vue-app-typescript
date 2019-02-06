@@ -1,0 +1,20 @@
+{
+  "extends": "./.config/tsconfig.base",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "es5",
+    "lib": ["esnext", "dom"],
+    "baseUrl": ".",
+    "paths": {
+      "components": ["src/components"],
+      "components/*": ["src/components/*"],
+      "stores": ["src/stores"],
+      "model": ["src/stores/model"],
+      "utils": ["src/utils"],
+      "utils/*": ["src/utils/*"]
+    }
+  },
+  "include": ["src/**/*", "src/**/*.d.ts"]
+}
